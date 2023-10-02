@@ -5,13 +5,15 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHome", "SmartHome\SmartHome.csproj", "{0DC8B6A8-42AD-472A-BC53-C2FC379AB143}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDevice_Azure", "ConsoleDevice_Azure\ConsoleDevice_Azure.csproj", "{FFDD1D25-23FD-4962-8F5C-AEAA0412C5EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleDevice_Azure", "ConsoleDevice_Azure\ConsoleDevice_Azure.csproj", "{FFDD1D25-23FD-4962-8F5C-AEAA0412C5EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulerad_Iot", "Simulerad_Iot\Simulerad_Iot.csproj", "{23729FAD-85B8-4CAE-8CA5-B660754CEE76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulerad_Iot", "Simulerad_Iot\Simulerad_Iot.csproj", "{23729FAD-85B8-4CAE-8CA5-B660754CEE76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulerad_Shared", "Simulerad_Shared\Simulerad_Shared.csproj", "{DAEB413B-8D73-4505-A9ED-B0280CDDF1AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulerad_Shared", "Simulerad_Shared\Simulerad_Shared.csproj", "{DAEB413B-8D73-4505-A9ED-B0280CDDF1AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulerad_Iot_Azure_Function", "Simulerad_Iot_Azure_Function\Simulerad_Iot_Azure_Function.csproj", "{71654B84-4FE7-4E81-9C61-91A47AD843B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simulerad_Iot_Azure_Function", "Simulerad_Iot_Azure_Function\Simulerad_Iot_Azure_Function.csproj", "{71654B84-4FE7-4E81-9C61-91A47AD843B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{0E1B33ED-7463-4FFD-9AFA-B4B003AFF1EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{71654B84-4FE7-4E81-9C61-91A47AD843B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71654B84-4FE7-4E81-9C61-91A47AD843B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71654B84-4FE7-4E81-9C61-91A47AD843B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1B33ED-7463-4FFD-9AFA-B4B003AFF1EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1B33ED-7463-4FFD-9AFA-B4B003AFF1EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1B33ED-7463-4FFD-9AFA-B4B003AFF1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1B33ED-7463-4FFD-9AFA-B4B003AFF1EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

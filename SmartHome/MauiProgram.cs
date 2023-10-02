@@ -1,7 +1,11 @@
 ﻿using CommunityToolkit.Maui;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using DataAccess;
+using SmartApp.MVVM.Views;
 using SmartHome.MVVM.Pages;
 using SmartHome.MVVM.ViewModels;
+using SmartHome.Services;
 
 namespace SmartHome
 {
@@ -31,12 +35,14 @@ namespace SmartHome
             builder.Services.AddSingleton<AllDevicesViewModel>();
             builder.Services.AddSingleton<AllDevicesPage>();
             builder.Services.AddSingleton<GetStartedViewModel>();
-            builder.Services.AddSingleton<GetStartedPage>();
+            //builder.Services.AddSingleton<GetStartedPage>();
 
+            builder.Services.AddSingleton<HomeViewModel>();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<HomePage>();
+            builder.Services.AddSingleton<DeviceManager>();
+            builder.Services.AddDbContext<DataContext>(x => x.UseSqlite($"Data Source={DataBasePathFinder.GetPath()}"));
 
-#if DEBUG
-            builder.Logging.AddDebug();
-#endif
 
             return builder.Build();
         }
