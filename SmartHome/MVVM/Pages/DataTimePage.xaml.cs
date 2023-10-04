@@ -2,11 +2,12 @@ using SmartHome.MVVM.ViewModels;
 
 namespace SmartHome.MVVM.Pages;
 
-public partial class GetStartedPage : ContentPage
+public partial class DataTimePage : ContentPage
 {
-    public GetStartedPage(GetStartedViewModel viewModel)
+    public DataTimePage(DataTimeViewModel viewModel)
     {
         InitializeComponent();
         BindingContext = viewModel;
+
     }
 }

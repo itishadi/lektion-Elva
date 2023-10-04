@@ -11,13 +11,6 @@ namespace SmartHome
             BindingContext = viewModel;
         }
 
-        //protected override async void OnAppearing()
-        //{
-        //    base.OnAppearing();
-        //    var viewModel = BindingContext as MainViewModel;
-        //    await viewModel?.CheckConfiguration();
-        //}
-
 
         private void Switch_Toggled(object sender, ToggledEventArgs e)
         {

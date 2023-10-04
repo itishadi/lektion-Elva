@@ -16,7 +16,17 @@
 
         <Grid Grid.Row="0" Grid.ColumnSpan="2" ColumnDefinitions="*,*" Margin="0,0,0,0">
             <Button Command="{Binding GoToSettingsCommand}" Grid.Column="1" Text="&#xf141;" FontFamily="FontAwesomeRegular" Style="{StaticResource NavigationButton}" HorizontalOptions="End" VerticalOptions="Center" />
+
+
+
+            <Button Command="{Binding GoToDateTimeCommand}" Grid.Column="2" Text="&#xf017;" FontFamily="FontAwesomeRegular" Style="{StaticResource NavigationButton}" HorizontalOptions="Center" VerticalOptions="Center" />
+
+
+
+
+            <!--<Button Command="{Binding DataTimeViewModel}" Grid.Column="2" Text="&#xf017;" FontFamily="FontAwesomeRegular" Style="{StaticResource NavigationButton}" HorizontalOptions="Start" VerticalOptions="Center" />-->
         </Grid>
+
 
         <Frame Grid.Row="1" Grid.ColumnSpan="2" Padding="0" BorderColor="Transparent" >
             <Image Source="Resources/Images/image" Aspect="AspectFill" />
@@ -49,12 +59,14 @@
 
             </Grid>
         </Frame>
+        
 
         <Frame Grid.Row="3" Grid.Column="1"></Frame>
 
         <Label Grid.Row="4"  Grid.ColumnSpan="2" Text="Favorite Device" FontSize="16" FontFamily="RubikRegular" TextColor="{StaticResource White}" VerticalOptions="Center" />
 
         <Frame Grid.Row="5" Grid.ColumnSpan="2"></Frame>
+        
 
     </Grid>
 </ContentPage>

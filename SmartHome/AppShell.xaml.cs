@@ -1,4 +1,5 @@
 using SmartHome.MVVM.Pages;
+using SmartHome.MVVM.Views;
 
 namespace SmartHome
 {
@@ -10,7 +11,7 @@ namespace SmartHome
 
             Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
             Routing.RegisterRoute(nameof(AllDevicesPage), typeof(AllDevicesPage));
-            Routing.RegisterRoute(nameof(GetStartedPage), typeof(GetStartedPage));
+            Routing.RegisterRoute(nameof(DataTimePage), typeof(DataTimePage));
         }
     }
 }

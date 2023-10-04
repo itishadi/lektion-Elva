@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DataAccess.Entities;
+namespace DataAccess.Models.Entities;
 
-public class SettingsEntity
+public class ZeniAppSettings
 {
     [Key]
     public string ConnectionString { get; set; } = null!;

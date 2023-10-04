@@ -12,5 +12,7 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage">
     </ShellContent>
+    
+
 
 </Shell>

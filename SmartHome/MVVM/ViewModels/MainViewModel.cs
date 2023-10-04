@@ -1,9 +1,11 @@
 ﻿using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using DataAccess;
+
 using Microsoft.EntityFrameworkCore;
+using SmartApp.MVVM.Views;
 using SmartHome.MVVM.Pages;
+using SmartHome.MVVM.Views;
 using SmartHome.Services;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -12,12 +14,17 @@ namespace SmartHome.MVVM.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
+    //public DataTimeViewModel DataTimeViewModel { get; } = new DataTimeViewModel();
+
 
     [RelayCommand]
     async Task GoToSettings() => await Shell.Current.GoToAsync(nameof(SettingsPage));
 
     [RelayCommand]
     async Task GoToAllDevices() => await Shell.Current.GoToAsync(nameof(AllDevicesPage));
+
+    [RelayCommand]
+    async Task GoToDateTime() => await Shell.Current.GoToAsync(nameof(DataTimePage));
 
     [RelayCommand]
     void ToggleState(object obj)
@@ -28,19 +35,11 @@ public partial class MainViewModel : ObservableObject
 
 
 
-    public async Task CheckConfiguration()
-    {
-        if (!IsConfigured)
-            await Shell.Current.GoToAsync(nameof(GetStartedPage));
-    }
-
-
-
+  
 
 
     //
     private readonly DeviceManager _deviceManager;
-    private readonly DataContext _context;
 
     [RelayCommand]
     async static Task GoBack() => await Shell.Current.GoToAsync("..");
@@ -69,16 +68,14 @@ public partial class MainViewModel : ObservableObject
                 methodName = "stop";
             }
 
-
             await _deviceManager.SendDirectMethodAsync(deviceItem.DeviceId, methodName);
         }
         catch (Exception ex) { Debug.WriteLine(ex.Message); deviceItem.IsActive = false; }
     }
 
-    public MainViewModel(DeviceManager deviceManager, DataContext context)
+    public MainViewModel(DeviceManager deviceManager )
     {
         _deviceManager = deviceManager;
-        _context = context;
 
         IsConfigured = false;
 
@@ -111,22 +108,38 @@ public partial class MainViewModel : ObservableObject
         Devices = new ObservableCollection<AllDevicesViewModel>(_deviceManager.Devices
             .Select(device => new AllDevicesViewModel(device)).ToList());
     }
+    //database
+    //private readonly ZeniAppDbContext _context;
+    //private readonly IotHubManager _iotHubManager;
 
-    private async Task AddConnectionStringAsync(string connectionString)
+    //public MainViewModel(ZeniAppDbContext context, IotHubManager iotHubManager)
+    //{
+    //    _context = context;
+    //    _iotHubManager = iotHubManager;
+    //    CheckConfigurationAsync().ConfigureAwait(false);
+
+    //}
+
+    //private async Task CheckConfigurationAsync()
+    //{
+    //    try
+    //    {
+    //        if (await _context.Settings.AnyAsync())
+    //        {
+    //            await _iotHubManager.InitializeAsync();
+    //            await Shell.Current.GoToAsync(nameof(OverviewPage));
+    //        }
+
+    //    }
+    //    catch (Exception ex) { Debug.WriteLine(ex.Message); }
+    //}
+
+
+    [RelayCommand]
+    async Task GoToGetStarted()
     {
-        _context.Settings.Add(new DataAccess.Entities.SettingsEntity { ConnectionString = connectionString });
-        await _context.SaveChangesAsync();
+        await Shell.Current.GoToAsync(nameof(GetStartedPage));
     }
-
-    private async Task<string> GetConnectionStringAsync()
-    {
-        var result = await _context.Settings.FirstOrDefaultAsync();
-        if (result != null)
-            return result.ConnectionString;
-
-        return null!;
-    }    //
-
 
 }
 
