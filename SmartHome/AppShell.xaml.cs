@@ -10,8 +10,8 @@ namespace SmartHome
             InitializeComponent();
 
             Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
-            Routing.RegisterRoute(nameof(AllDevicesPage), typeof(AllDevicesPage));
             Routing.RegisterRoute(nameof(DataTimePage), typeof(DataTimePage));
+            Routing.RegisterRoute(nameof(AllDevicesPage), typeof(AllDevicesPage));
         }
     }
 }
