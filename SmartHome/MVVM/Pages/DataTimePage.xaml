@@ -8,15 +8,13 @@
              Shell.NavBarIsVisible="False">
 
 
-    <!--<ContentPage.Behaviors>
+    <ContentPage.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="{StaticResource Black}" />
-
-    </ContentPage.Behaviors>-->
-
+    </ContentPage.Behaviors>
 
     <ContentPage.Content>
 
-        <Grid Margin="0,100,0,0">
+        <!--<Grid Margin="0,100,0,0">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -27,6 +25,7 @@
                 <RowDefinition Height="150" />
             </Grid.RowDefinitions>
 
+          
 
             <StackLayout Grid.Row="0" BackgroundColor="{StaticResource Primary}">
                 <Label Text="Current Time" TextColor="White" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
@@ -50,8 +49,50 @@
                 <Label Text="{Binding Temperature}" FontSize="48" FontAttributes="Bold" HorizontalOptions="Center" />
                 <Label Text="{Binding Condition}" FontFamily="FontAwesomeRegular" FontSize="24" FontAttributes="Italic" HorizontalOptions="Center" />
             </StackLayout>
-        </Grid>
-    </ContentPage.Content>
+        </Grid>-->
 
+
+
+       
+            <Grid Margin="0,50,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="200" />
+
+                </Grid.RowDefinitions>
+
+            <Button Grid.Row="0" Command="{Binding GoBackCommand}" Text="&#xf00d;" FontFamily="FontAwesomeRegular" Style="{StaticResource NavigationButton}" HorizontalOptions="End" VerticalOptions="Center" />
+
+
+            <BoxView Grid.Row="1" BackgroundColor="Transparent" />
+                
+            <StackLayout Grid.Row="1" BackgroundColor="{StaticResource Primary}">
+                    <Label Text="Current Time" TextColor="White" FontSize="24" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+
+                <BoxView Grid.Row="2" BackgroundColor="Transparent" />
+
+                <StackLayout Grid.Row="2" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="{Binding CurrentTime}" FontSize="48" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="{Binding CurrentDate}" FontSize="24" FontAttributes="Italic" HorizontalOptions="Center" />
+                </StackLayout>
+
+                <!--<BoxView Grid.Row="3" BackgroundColor="Transparent" />-->
+
+                <StackLayout Grid.Row="4" BackgroundColor="{StaticResource Primary}">
+                    <Label Text="Weather" TextColor="White" FontSize="26" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <BoxView Grid.Row="5" BackgroundColor="Transparent" />
+
+                <StackLayout Grid.Row="6" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="{Binding Temperature}" FontSize="48" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Text="{Binding Condition}" FontFamily="FontAwesomeRegular" FontSize="24" FontAttributes="Italic" HorizontalOptions="Center" />
+                </StackLayout>
+                </Grid>
+    </ContentPage.Content>
 </ContentPage>
 

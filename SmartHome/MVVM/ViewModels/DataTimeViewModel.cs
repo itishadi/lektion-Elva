@@ -15,7 +15,8 @@ namespace SmartHome.MVVM.ViewModels;
 public partial class DataTimeViewModel : ObservableObject, INotifyPropertyChanged
 {
 
-    
+    [RelayCommand]
+    async Task GoBack() => await Shell.Current.GoToAsync("..");
 
     private string _currentTime;
     private string _currentDate;
@@ -148,7 +149,7 @@ public partial class DataTimeViewModel : ObservableObject, INotifyPropertyChange
     {
         _cancellationTokenSource?.Cancel();
     }
-    public ICommand GoBackCommand { get; }
+
 
    
   
