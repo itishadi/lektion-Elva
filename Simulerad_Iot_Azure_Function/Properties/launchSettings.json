@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "Simulerad_Iot_Azure_Function": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7051",
-      "launchBrowser": false
-    }
-  }
-}
